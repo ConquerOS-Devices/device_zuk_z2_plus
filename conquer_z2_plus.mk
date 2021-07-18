@@ -20,10 +20,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from z2_plus device
 $(call inherit-product, device/zuk/z2_plus/device.mk)
 
-# Inherit some common Styx stuff.
-$(call inherit-product, vendor/styx/config/common.mk)
+# Inherit some common ConquerOS stuff.
+$(call inherit-product, vendor/conquer/config/common.mk)
 
-PRODUCT_NAME := styx_z2_plus
+# Set Boot Animination Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_NAME := conquer_z2_plus
 PRODUCT_DEVICE := z2_plus
 PRODUCT_MANUFACTURER := ZUK
 PRODUCT_BRAND := ZUK
@@ -37,6 +40,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=z2_plus PRODUCT_NAME=z2_plus
 
 TARGET_VENDOR := zuk
 
-# Styx props
-STYX_BUILD_VARIANT := OFFICIAL
+# Conquer Props
+CONQUER_BUILD_TYPE := OFFICIAL
 TARGET_USES_HARDWARE_KEYS := true
